@@ -1,0 +1,87 @@
+.navigation-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.pages-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.pages-links li {
+  list-style: none;
+}
+
+.pages-links li:hover {
+  background-color: grey;
+}
+
+.pages-links li a {
+  text-decoration: none;
+  padding: 1rem;
+  color: white;
+  display: block;
+}
+
+.shop-name {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.hamburger-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.hamburger-btn .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .pages-links {
+    width: 100%;
+  }
+
+  .navigation-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pages-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .pages-links li {
+    text-align: center;
+  }
+
+  .pages-links li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .pages-links.active {
+    display: flex;
+  }
+}
