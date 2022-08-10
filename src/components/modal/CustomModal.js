@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Modal from "react-modal";
 import { useForm } from "react-hook-form";
 import "./CustomModal.css";
@@ -22,7 +22,7 @@ const customStyles = {
 };
 
 const CustomModal = ({ fetchData }) => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const { register, handleSubmit } = useForm();
   const openModal = () => {
     setIsOpen(true);

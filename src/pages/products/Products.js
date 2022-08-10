@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Card from "../../components/card/Card";
-import "./products.css";
 import CustomModal from "../../components/modal/CustomModal";
+import EmptyMsg from "../../components/ui-components/empty-msg/EmptyMsg";
+import "./products.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -20,9 +21,13 @@ const Products = () => {
     <div>
       <CustomModal fetchData={fetchData} />
       <div className="products-container">
-        {products.map((product) => (
-          <Card {...product} purchasable key={product.id} />
-        ))}
+        {products && products.length ? (
+          products.map((product) => (
+            <Card {...product} purchasable key={product.id} />
+          ))
+        ) : (
+          <EmptyMsg>There are no products</EmptyMsg>
+        )}
       </div>
     </div>
   );

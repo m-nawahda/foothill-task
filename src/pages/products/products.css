@@ -1,5 +1,7 @@
 .products-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     padding: 16px;
     max-width: 960px;

@@ -1,8 +1,7 @@
-import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import ShoppingCarts from "./shoppingCarts/ShoppingCarts";
 import Products from "./products/Products";
-import { Route, Routes } from "react-router-dom";
 
 const Home = () => {
   return (
