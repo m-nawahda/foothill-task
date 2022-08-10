@@ -1,26 +1,31 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
 const Navbar = () => {
-  const classNames = ["hamburger-btn"];
+  const [classNames, setClassNames] = useState(["pages-links"]);
+
   const handleToggleBtn = () => {
+    const updateClassNames = [...classNames];
     if (classNames.length > 1) {
-      classNames.push("active");
+      updateClassNames.pop();
     } else {
-      classNames.pop();
+      updateClassNames.push("active");
     }
+    setClassNames(updateClassNames);
   };
+
   return (
     <nav className="navigation-bar">
       <Link to="/" className="shop-name">
         e-commerce
       </Link>
-      <a href="#" className={classNames.join(" ")} onClick={handleToggleBtn}>
+      <a href="#" className="hamburger-btn" onClick={handleToggleBtn}>
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </a>
-      <nav className="pages-links">
+      <nav className={classNames.join(" ")}>
         <ul>
           <li>
             <Link to="/products">Products</Link>

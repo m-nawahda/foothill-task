@@ -1,10 +1,64 @@
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .form-control {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .form-control input {
- margin: 10px;
+  margin: 10px;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn-group button,
+.add-product-btn {
+  margin: 10px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.btn-group button:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 4px rgba(128, 128, 128, 0.5);
+}
+
+.btn-group .submit-btn {
+  background-color: green;
+}
+
+.btn-group .cancel-btn {
+  background-color: red;
+}
+
+.add-product-btn {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 15px;
+  background-color: green;
+  font-family: monospace;
+}
+
+.add-product-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 5px rgba(gray, gray, gray, 0.7);
+}
+
+.plus-icon {
+  margin: 5px;
 }

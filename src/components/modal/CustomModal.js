@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 import { useForm } from "react-hook-form";
 import "./CustomModal.css";
-Modal.setAppElement("#yourAppElement");
+
+Modal.setAppElement("#modal-form");
 
 const customStyles = {
   content: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     top: "50%",
     left: "50%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
+    boxShadow: "10px 10px 5px #aaaaaa",
+    border: "1px solid gray",
     transform: "translate(-50%, -50%)",
   },
 };
@@ -38,23 +44,38 @@ const CustomModal = ({ fetchData }) => {
     fetchData();
     closeModal();
   };
+
   return (
-    <div>
-      <button onClick={openModal}>Open Modal</button>
+    <div className="modal-container">
+      <button onClick={openModal} className="add-product-btn">
+        <i className="material-icons plus-icon">&#xe147;</i>Add New Product
+      </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
       >
         <form className="form-control" onSubmit={handleSubmit(addProduct)}>
-          <input placeholder="name" {...register("name")} />
-          <input placeholder="price" {...register("price")} />
-          <input placeholder="description" {...register("description")} />
-          <input placeholder="url image" {...register("urlImage")} />
-          <button onClick={addProduct}>add product</button>
-
-          <button onClick={closeModal}>close</button>
+          <input placeholder="name..." {...register("name")} required />
+          <input placeholder="price..." {...register("price")} required />
+          <textarea
+            placeholder="description..."
+            {...register("description")}
+            required
+          />
+          <input
+            placeholder="url image..."
+            {...register("urlImage")}
+            required
+          />
+          <div className="btn-group">
+            <button onClick={addProduct} className="submit-btn">
+              add product
+            </button>
+            <button onClick={closeModal} className="cancel-btn">
+              close
+            </button>
+          </div>
         </form>
       </Modal>
     </div>

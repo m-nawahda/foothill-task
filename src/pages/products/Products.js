@@ -17,11 +17,13 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="products-container">
-      <CustomModal fetchData={fetchData}/>
-      {products.map((product) => (
-        <Card {...product} purchasable key={product.id} />
-      ))}
+    <div>
+      <CustomModal fetchData={fetchData} />
+      <div className="products-container">
+        {products.map((product) => (
+          <Card {...product} purchasable key={product.id} />
+        ))}
+      </div>
     </div>
   );
 };

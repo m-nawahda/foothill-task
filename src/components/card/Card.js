@@ -11,17 +11,28 @@ const Card = ({ name, price, image, description, id, purchasable }) => {
       <div className="product-image">
         <img src={image} />
       </div>
-      <div>
+      <div className="product-details">
         <h4>{name}</h4>
         <div>{`${price}$`}</div>
-        {description ? <p>{description}</p> : null}
+        {description ? (
+          <p>
+            <hr />
+            {description}
+            <hr />
+          </p>
+        ) : null}
       </div>
       {purchasable ? (
-        <button onClick={() => dispatch(addCart({ name, image, price, id }))}>
+        <button
+          className="add-btn"
+          onClick={() => dispatch(addCart({ name, image, price, id }))}
+        >
           add to card
         </button>
       ) : (
-        <button onClick={() => dispatch(removeCart(id))}>remove</button>
+        <button className="remove-btn" onClick={() => dispatch(removeCart(id))}>
+          remove cart
+        </button>
       )}
     </div>
   );

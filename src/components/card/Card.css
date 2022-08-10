@@ -4,7 +4,6 @@
   padding: 16px;
   width: 200px;
   border-radius: 2px;
-
 }
 
 .product-image {
@@ -14,13 +13,9 @@
 }
 
 .product-image img {
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-}
-
-.product-details {
-  padding: 30px;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
 }
 
 .product-details h4 {
@@ -30,7 +25,7 @@
   text-transform: uppercase;
   color: #363636;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .product-details h4:hover {
@@ -39,6 +34,37 @@
 
 .product-details p {
   color: #3d3d3d;
-  margin-bottom: 20px;
   font-size: 14px;
+  text-align: start;
+}
+
+.card button {
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.add-btn {
+  border: 2px solid #008cba;
+}
+
+.add-btn:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.remove-btn {
+  border: 2px solid #f44336;
+}
+
+.remove-btn:hover {
+  background-color: #f44336;
+  color: white;
 }
